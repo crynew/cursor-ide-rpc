@@ -75,6 +75,10 @@ npm run lint
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Preview Image
+
+<img src="https://cdn.victims.lol/uploads/files/prints/DiscordPTB_cxKFlkFkeo-1743254435482-123976143.png">
+
 ## Acknowledgments
 
 - [@xhayper/discord-rpc](https://github.com/xhayper/discord-rpc) for the Discord RPC client
