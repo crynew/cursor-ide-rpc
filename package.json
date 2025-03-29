@@ -1,0 +1,87 @@
+{
+  "name": "cursor-ide-rpc",
+  "displayName": "Cursor IDE Discord Rich Presence",
+  "description": "Show your Cursor IDE activity in Discord with Rich Presence. Track your coding sessions, file changes, and project status in real-time.",
+  "version": "0.0.1",
+  "publisher": "Brunno",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crynew/cursor-ide-rpc"
+  },
+  "bugs": {
+    "url": "https://github.com/crynew/cursor-ide-rpc/issues"
+  },
+  "homepage": "https://github.com/crynew/cursor-ide-rpc#readme",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "discord",
+    "rich presence",
+    "rpc",
+    "vscode",
+    "cursor",
+    "status",
+    "activity",
+    "productivity"
+  ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursor-ide-rpc.helloWorld",
+        "title": "Discord RPC: Show Status"
+      }
+    ],
+    "configuration": {
+      "title": "Cursor IDE Discord RPC",
+      "properties": {
+        "cursor-ide-rpc.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable Discord Rich Presence"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "node ./esbuild.js",
+    "watch": "node ./esbuild.js --watch",
+    "package": "node ./esbuild.js --minify",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9",
+    "esbuild": "^0.20.1",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@xhayper/discord-rpc": "^1.1.2"
+  }
+}
